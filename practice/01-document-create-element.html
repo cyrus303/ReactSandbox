@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document-create-element</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="container"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById('root');
+
+      const Message = (msg) => <div className="message">{msg.children}</div>;
+
+      const element = <Message>hello how are you</Message>;
+
+      ReactDOM.render(element, rootElement);
+      // createRoot(document.getElementById('root')).render(<h1>Your App</h1>);
+      // second component
+
+      const Element2 = (property) => <div> {property.children}</div>;
+
+      const testElement = (
+        <div>
+          <Element2>testing testing</Element2>
+          <Element2>testing qweqweqwetesting</Element2>
+        </div>
+      );
+      ReactDOM.render(testElement, document.getElementById('container'));
+    </script>
+  </body>
+</html>
