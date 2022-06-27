@@ -18,6 +18,7 @@
   <body>
     <div id="root"></div>
     <div id="container"></div>
+    <div id="esb"></div>
     <script type="text/babel">
       const rootElement = document.getElementById('root');
 
@@ -38,6 +39,21 @@
         </div>
       );
       ReactDOM.render(testElement, document.getElementById('container'));
+
+      // component 3
+
+      const ESB = (role) => (
+        <div className="designation"> I work at ESB as {role.children}</div>
+      );
+
+      const jobEl = (
+        <div>
+          <ESB>scrum master</ESB>
+        </div>
+      );
+
+      const esbEl = document.getElementById('esb');
+      ReactDOM.render(jobEl, esbEl);
     </script>
   </body>
 </html>
